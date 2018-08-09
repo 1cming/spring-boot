@@ -124,7 +124,7 @@
 		<lombok.version>1.18.0</lombok.version>
 		<mariadb.version>2.2.6</mariadb.version>
 		<micrometer.version>1.0.6</micrometer.version>
-		<mockito.version>2.19.1</mockito.version>
+		<mockito.version>2.21.0</mockito.version>
 		<mongo-driver-reactivestreams.version>1.9.0</mongo-driver-reactivestreams.version>
 		<mongodb.version>3.8.0</mongodb.version>
 		<mssql-jdbc.version>6.4.0.jre8</mssql-jdbc.version>
@@ -153,7 +153,7 @@
 		<slf4j.version>1.7.25</slf4j.version>
 		<snakeyaml.version>1.21</snakeyaml.version>
 		<solr.version>7.4.0</solr.version>
-		<spring.version>5.1.0.RC1</spring.version>
+		<spring.version>5.1.0.BUILD-SNAPSHOT</spring.version>
 		<spring-amqp.version>2.1.0.M1</spring-amqp.version>
 		<spring-batch.version>4.1.0.M2</spring-batch.version>
 		<spring-cloud-connectors.version>2.0.2.RELEASE</spring-cloud-connectors.version>
@@ -1919,6 +1919,13 @@
 				<groupId>org.hibernate.validator</groupId>
 				<artifactId>hibernate-validator</artifactId>
 				<version>${hibernate-validator.version}</version>
+				<exclusions>
+					<!-- https://hibernate.atlassian.net/browse/HV-1644 -->
+					<exclusion>
+						<groupId>org.openjfx</groupId>
+						<artifactId>javafx.base</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.hibernate.validator</groupId>
